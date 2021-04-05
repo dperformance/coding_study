@@ -8,7 +8,7 @@ input = "hello my name is sparta"
 
 
 def find_max_occurred_alphabet(string):
-    alphabet_occurrence_array = [0] * 26
+    alphabet_occurrence_array = [0] * 26            #
 
     for char in string:
         if not char.isalpha():
