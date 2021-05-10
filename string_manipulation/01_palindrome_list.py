@@ -28,8 +28,6 @@ class Solution:
 
 if __name__ == '__main__':
     s = Solution()
-    result = s.isPalindrome(strs1)
-    print(result)
+    print(s.isPalindrome(strs1))
 
-    result = s.isPalindrome(strs2)
-    print(result)
+    print(s.isPalindrome(strs2))
