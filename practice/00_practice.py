@@ -15,12 +15,19 @@ output = "ball"
 
 
 def test(paragraph: str, banned: List[str]) -> str:
+    # words = [word for word in re.sub(r'[^\w]', ' ', paragraph)
+    #     .lower().split()
+    #          if word not in banned]
+
     words = [word for word in re.sub(r'[^\w]', ' ', paragraph)
         .lower().split()
              if word not in banned]
+    print(words)
 
-    p = re.compile('[a-z]+')
-    print(p)
+    counts = collections.Counter(words)
+    print(counts)
+
+
 
     # print(words)
 
@@ -33,8 +40,8 @@ def test(paragraph: str, banned: List[str]) -> str:
     """
 
     pat = re.compile("(\d{6})[-]\d{7}")
-    print(pat.sub("\g<1>-*******", data))
-    print(data)
+    # print(pat.sub("\g<1>-*******", data))
+    # print(data)
 
 
 start = time.time()
