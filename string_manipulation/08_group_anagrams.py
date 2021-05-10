@@ -23,10 +23,8 @@ Output: [
 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[str]:
-        print(strs)
         print("sorted()정렬 :", sorted(strs))
         anagrams = collections.defaultdict(list)
-        print(anagrams)
 
         # 정렬하여 딕셔너리에 추가
         for word in strs:

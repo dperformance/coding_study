@@ -3,48 +3,36 @@ import re
 import time
 from typing import List
 
-paragraph = "Bob hit a ball, the hit BALL flew far after it was hit."
-banned = ["hit"]
-output = "ball"
-
-"""
-    1. 구두점제거 : , ' ' 
-    2. 동일한 문장 카운트
-    3. 제외될 문장 처리
-"""
+strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
+Output: [
+    ["ate", "eat", "tea"],
+    ["nat", "tan"],
+    ["bat"]
+]
 
 
-def test(paragraph: str, banned: List[str]) -> str:
-    # words = [word for word in re.sub(r'[^\w]', ' ', paragraph)
-    #     .lower().split()
-    #          if word not in banned]
+def test(strs: List[str]) -> List[str]:
+    # 1. sorted() 사용하여 List 형태로 return 받는다.
 
-    words = [word for word in re.sub(r'[^\w]', ' ', paragraph)
-        .lower().split()
-             if word not in banned]
-    print(words)
+    # 2. 정렬된 List 값을 딕셔너리 key 값으로 사용하기 위해 join() 함수를 사용한다.
+    #   - defaultdict(list) 사용
+    anagrams = collections.defaultdict(list)
 
-    counts = collections.Counter(words)
-    print(counts)
+    print(sorted(strs))
+    for word in strs:
+        print(''.join(sorted(word)))
+        anagrams[''.join(sorted(word))].append(word)
+
+    print(anagrams)
+    print(anagrams.values())
+
+    print()
 
 
-
-    # print(words)
-
-    data = """
-    park 800905-1049118
-    kim  700905-1059119
-    doc aswqe-12343
-    ttt 1234567886-123434
-    abc 123456-1234567
-    """
-
-    pat = re.compile("(\d{6})[-]\d{7}")
-    # print(pat.sub("\g<1>-*******", data))
-    # print(data)
 
 
 start = time.time()
-print(test(paragraph, banned))
+
+print(test(strs))
 
 print("time :", time.time() - start)
