@@ -15,9 +15,7 @@ class Solution:
         right_max = height[right]
 
         while left < right:
-            #    0                0    ,     0
             left_max = max(height[left], left_max)
-            #                     1      ,    1
             right_max = max(height[right], right_max)
 
             # 더 높은 쪽을 향해 투 포인터 이동

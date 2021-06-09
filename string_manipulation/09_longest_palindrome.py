@@ -2,6 +2,7 @@ str1 = "babad"
 str2 = "cbbd"
 str3 = "a"
 str4 = "ac"
+str5 = "12345432"
 
 
 class Solution:
@@ -22,6 +23,7 @@ class Solution:
         result = ''
         # 슬라이딩 윈도우 우측으로 이동
         for i in range(len(s) - 1):
+            print(i)
             result = max(result,
                          expand(i, i + 1),
                          expand(i, i + 2),
@@ -36,6 +38,6 @@ result = s.longestPaindrome(str2)
 print(result)
 result = s.longestPaindrome(str3)
 print(result)
-result = s.longestPaindrome(str4)
+result = s.longestPaindrome(str5)
 print(result)
 

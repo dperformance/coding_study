@@ -1,38 +1,25 @@
-import collections
-import re
-import time
-from typing import List
-
-strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
-Output: [
-    ["ate", "eat", "tea"],
-    ["nat", "tan"],
-    ["bat"]
-]
+finding_target = 9
+finding_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16]
 
 
-def test(strs: List[str]) -> List[str]:
-    # 1. sorted() 사용하여 List 형태로 return 받는다.
+def is_existing_target_number_binary(target, array):
+    cur_min = 1
+    cur_max = len(array) - 1
+    cur_target = (cur_min + cur_max) // 2
 
-    # 2. 정렬된 List 값을 딕셔너리 key 값으로 사용하기 위해 join() 함수를 사용한다.
-    #   - defaultdict(list) 사용
-    anagrams = collections.defaultdict(list)
+    while cur_min <= cur_max:
+        if target == cur_target:
+            return True
+        elif target > cur_target:
+            cur_min = cur_target + 1
+        else:
+            cur_max = cur_target - 1
 
-    print(sorted(strs))
-    for word in strs:
-        print(''.join(sorted(word)))
-        anagrams[''.join(sorted(word))].append(word)
+        print(cur_min, cur_max)
+        cur_target = (cur_min + cur_max) // 2
 
-    print(anagrams)
-    print(anagrams.values())
-
-    print()
-
+    return False
 
 
-
-start = time.time()
-
-print(test(strs))
-
-print("time :", time.time() - start)
+result = is_existing_target_number_binary(finding_target, finding_numbers)
+print(result)

@@ -2,7 +2,8 @@ import collections, re
 from typing import Deque
 
 
-strs1 = "A man, a plan, a canal: Panama"
+# strs1 = "A man, a plan, a canal: Panama"
+strs1 = "abcba"
 strs2 = "race a car"
 
 
