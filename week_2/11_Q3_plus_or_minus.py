@@ -41,10 +41,10 @@
 """
 
 
-# numbers = [1, 1, 1, 1, 1]
-# target_number = 3
-numbers = [2, 3, 1]
-target_number = 0
+numbers = [1, 1, 1, 1, 1]
+target_number = 3
+# numbers = [2, 3, 1]
+# target_number = 0
 result = []
 
 # all_ways = result = []
@@ -71,4 +71,3 @@ def get_count_of_ways_to_target_by_doing_plus_or_minus(array, target):
 
 print(get_count_of_ways_to_target_by_doing_plus_or_minus(numbers, target_number))  # 5를 반환
 print(get_all_ways_to_by_doing_plus_or_minus(numbers, 0, 0, result))
-print(result)
